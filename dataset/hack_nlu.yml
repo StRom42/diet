@@ -1,0 +1,21 @@
+version: "2.0"
+nlu:
+- intent: whenIsOccasion
+  examples: |
+    - Когда пройдет [съезд молодых ученых](occasion_name) в [Санкт-Петербурге](town)?
+    - [Конференция](occasion_name) в [Спб](town)
+    - Дата проведения [спортакиады](occasion_name) в [Воронеже](town)
+    - Когда [конгресс науки](ocassion_name) в [Питере](town)
+    - Дата [чемпионата России](occasion_name) в [Клд](town)
+- intent: where
+  examples: |
+    - Где будет [хакатон](occasion_name) [29 января](date)?
+    - Место [встречи ученых](occasion_name) [30.09](date)
+    - Где [сборище](occasion_name) [первого мая](date)?
+    - [Митинг](occasion_name) [второго декабря](date)
+    - Время [начала хакатона](occasion_name)
+- synonym: Санкт-Петербург
+  examples: |
+    - Спб
+    - Питер
+    - Северная столица

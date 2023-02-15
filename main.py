@@ -2,15 +2,15 @@
 
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+from src.models.wrapper import DIETClassifierWrapper
 
+if __name__ == "__main__":
+    config_file = "src/config.yml"
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+    wrapper = DIETClassifierWrapper(config=config_file)
 
+    print(wrapper.predict(["Где встреча выпускников?"]))
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+    wrapper.train_model()
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    print(wrapper.predict(["Где встреча выпускников 29 февраля"]))

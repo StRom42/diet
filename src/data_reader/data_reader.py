@@ -101,7 +101,7 @@ def read_from_yaml(file: str) -> List[Dict[str, str]]:
     except Exception as ex:
         raise RuntimeError(f"Cannot read file {file} with error:\t{ex}")
 
-    data = yaml.load(f)["nlu"]
+    data = yaml.safe_load(f)["nlu"]
     return data
 
 

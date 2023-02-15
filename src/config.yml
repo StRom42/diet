@@ -1,44 +1,35 @@
 model:
-  model: latest_model
-  tokenizer: latest_model
+  model: bert-base-uncased
+  tokenizer: julien-c/dummy-diff-tokenizer
   dataset_folder: dataset
   exclude_file: null
   entities:
-  - working_type
-  - shift_type
+  - town
+  - date
+  - occasion_name
   intents:
-  - WorkTimesBreaches
-  - WorkingTimeBreachDiscipline
-  - HolidaysOff
-  - AnnualLeaveApplicationProcess
-  - SetWorkingType
-  - TemporarySetWorkingType
-  - WorkingHours
-  - WorkingDay
-  - BreakTime
-  - Pregnant
-  - AttendanceRecord
-  - SelectShiftType
-  - LaborContract
-  - Recruitment
-  - SickLeave
-  - UnpaidLeave
-  - PaidLeaveForFamilyEvent
-  - UnusedAnnualLeave
-  - RegulatedAnnualLeave
-  - rating
-  - greet
-  - goodbye
-  - affirm
-  - deny
+  - whereIsOccasion
+  - whenIsOccasion
   device: cuda
   synonym:
+    "\u0420\u040E\u0420\u0457\u0420\xB1": "\u0420\u040E\u0420\xB0\u0420\u0405\u0420\
+      \u0454\u0421\u201A-\u0420\u045F\u0420\xB5\u0421\u201A\u0420\xB5\u0421\u0402\u0420\
+      \xB1\u0421\u0453\u0421\u0402\u0420\u0456"
+    "\u0420\u045F\u0420\u0451\u0421\u201A\u0420\xB5\u0421\u0402": "\u0420\u040E\u0420\
+      \xB0\u0420\u0405\u0420\u0454\u0421\u201A-\u0420\u045F\u0420\xB5\u0421\u201A\u0420\
+      \xB5\u0421\u0402\u0420\xB1\u0421\u0453\u0421\u0402\u0420\u0456"
+    "\u0420\u0459\u0420\xBB\u0420\u0491": "\u0420\u0459\u0420\xB0\u0420\xBB\u0420\u0451\
+      \u0420\u0405\u0420\u0451\u0420\u0405\u0420\u0456\u0421\u0402\u0420\xB0\u0420\
+      \u0491"
+    "\u0420\u040E\u0420\xB5\u0420\u0406\u0420\xB5\u0421\u0402\u0420\u0405\u0420\xB0\u0421\u040F \u0421\u0403\u0421\u201A\u0420\u0455\u0420\xBB\u0420\u0451\u0421\u2020\u0420\xB0": "\u0420\u040E\
+      \u0420\xB0\u0420\u0405\u0420\u0454\u0421\u201A-\u0420\u045F\u0420\xB5\u0421\u201A\
+      \u0420\xB5\u0421\u0402\u0420\xB1\u0421\u0453\u0421\u0402\u0420\u0456"
     office hour: office hours
     office: office hours
     office hours: office hour
 training:
   train_range: 0.95
-  num_train_epochs: 100
+  num_train_epochs: 1000
   per_device_train_batch_size: 4
   per_device_eval_batch_size: 4
   warmup_steps: 500
